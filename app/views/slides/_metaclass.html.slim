@@ -1,0 +1,28 @@
+.step.slide#metaclass[data-x=x_succ data-y=0]
+  q
+    h1
+      span Metaclass
+      small  don't tell people!
+
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby" style="font-size:0.9em;line-height:1.4em"]
+        |
+					dog = Object.new
+					def dog.bark
+					  "Auf auf"
+					end
+
+					dog.respond_to? :bark
+					Object.new.respond_to? :bark
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby" style="font-size:0.7em;"]
+        |
+        	metaclass = class << dog; self; end
+        	Object.instance_methods.grep(/bark/)
+        	metaclass.instance_methods.grep(/bark/)

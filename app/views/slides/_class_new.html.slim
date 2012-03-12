@@ -1,0 +1,26 @@
+.step.slide#class-new[data-x=x_succ data-y=0]
+  q
+    h1
+      span Class.new
+      small  class factories!
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        | 
+          klass = Class.new do
+            def hello
+              puts "Hello class"
+            end
+          end
+          klass.new.hello
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        | 
+          class Hello < klass
+          end
+          Hello.new.hello

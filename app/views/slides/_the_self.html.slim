@@ -1,0 +1,60 @@
+.step.slide#self[data-x=x_succ data-y=0]
+  q
+    h1
+      span The Self
+      small  em busca
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        |
+          class Person
+            def self.species
+              "Homo Sapien"
+            end
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        |
+          class Person
+            class << self
+              def species
+                "Homo Sapien"
+              end
+            end
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        |
+          class << Person
+            def species
+              "Homo Sapien"
+            end
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        |
+          Person.instance_eval do
+            def species
+              "Homo Sapien"
+            end
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        |
+          def Person.species
+            "Homo Sapien"
+          end

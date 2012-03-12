@@ -1,0 +1,27 @@
+.step.slide#instance[data-x=x_succ data-y=0]
+  q
+    h1
+      span Instance
+      small  
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        |
+          class Person
+            def name
+              "Joe"
+            end
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        |
+          Person.class_eval do
+            def name
+              "Bart"
+            end
+          end

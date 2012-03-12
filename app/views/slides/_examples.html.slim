@@ -1,0 +1,88 @@
+.step.slide#examples[data-x=x_succ data-y=0]
+  q
+    h1
+      span Exemplos
+      small  belos exemplos!
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby" style="font-size:0.8em"]
+        | # The most famous DSL (AR)
+          class Post < ActiveRecord::Base
+            has_many :comments
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        | # Dynamic methods (AR)
+          Post.find_by_title("Hello")
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby" style="line-height:1.2em;font-size:0.9em"]
+        | # An old classic (markaby)
+          html do
+            head do
+              title "Hello"
+            end
+            body do
+              h1 "Metaprogramming"
+            end
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        | # DSL framework (Sinatra)
+          get "/hello" do
+            "Metaprogramming"
+          end
+
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby" style="font-size:0.8em"]
+        | # A famous BDD tool (RSpec)
+          describe "hello" do
+            subject{ Hello.new }
+            it{ should respond_to(:world) }
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby" style="font-size:0.9em"]
+        | # Smart blocks for config
+          # (FactoryGirl)
+          Factory.define :user do |u|
+            u.name      'John'
+            u.email     'john@gmail.com'
+            u.password  '123456'
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby" style="font-size:0.9em"]
+        | # SmartER blocks (Machinist)
+          User.blueprint do
+            name      {'John'}
+            email     {'john@gmail.com'}
+            password  {'123456'}
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        | # Smart blocks that
+          # opens and close objects
+          File.open 'hello' do |f|
+            f.write "Hello"
+          end

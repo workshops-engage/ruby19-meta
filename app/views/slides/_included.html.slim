@@ -1,0 +1,48 @@
+.step.slide#included[data-x=x_succ data-y=0]
+  q
+    h1
+      span Included
+      br
+      small  
+
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby" style="font-size:0.7em; line-height:1.7em"]
+        |
+          module Runner
+            def self.included klass
+              puts "Included &#35;{klass.inspect}"
+            end
+            def run
+              puts "Runnin!"
+            end
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        |
+          class Cheetah
+            include Runner
+          end
+
+          Cheetah.new.run
+
+.step.slide.exercise[data-x=x_succ data-y=0]
+  = image_tag 'http://cdn1.iconfinder.com/data/icons/oldschool_babasse/Png/Hardware/ordinateur%20off.png'
+  q[style="font-size:1.1em"]
+    | Implementar o CRack (Crappy Rack).
+    pre
+      code[class="ruby" style="font-size: 0.85em; line-height: 1.2em"]
+        | class Greeter
+            include CRack
+            def hello name
+              "Hello &#35;{name}"
+            end
+          end
+
+          # http://localhost:9292/greeter/hello/Yo!
+          # >> Hello Yo!

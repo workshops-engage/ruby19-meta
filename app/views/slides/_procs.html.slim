@@ -1,0 +1,38 @@
+.step.slide#procs[data-x=x_succ data-y=0]
+  q
+    h1
+      span procs
+      small  & lambdas
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby" style="font-size:0.55em;line-height:1.5em"]
+        |
+          class MyGem
+            class Configurator
+              def method_missing variable, value
+                instance_variable_set "@&#35;{variable}", value
+              end
+            end
+            def self.config &block
+              @@conf ||= Configurator.new
+              @@conf.instance_eval &block if block
+              @@conf
+            end
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        |
+          MyGem.config do
+            path '/tmp'
+            url 'www.google.com'
+          end
+
+.step.slide.exercise[data-x=x_succ data-y=0]
+  = image_tag 'http://cdn1.iconfinder.com/data/icons/oldschool_babasse/Png/Hardware/ordinateur%20off.png'
+  q[style="font-size:1.5em"]
+    | Crie o método add_method que recebe uma classe, um nome e um proc e define o método nessa.

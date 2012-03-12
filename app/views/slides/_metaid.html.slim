@@ -1,0 +1,45 @@
+.step.slide#metaid[data-x=x_succ data-y=0]
+  q
+    h1
+      span metaid
+      small  tools about tools
+
+.step.slide.shell[data-x=x_succ data-y=0]
+  q
+    | gem install metaid
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby" style="font-size:0.55em;line-height:1.2em"]
+        |
+          require 'metaid'
+
+          class Character
+            
+            @@actions = {
+              fighter: [:attack, "attacked!"],
+              wizard: [:cast_spell, "casted a spell!"],
+              priest: [:pray, "sat down and prayed!"] }
+
+            def initialize(name, klass=:fighter)
+              meta_def(@@actions[klass][0]) do
+                puts "&#35;{name} has &#35;{@@actions[klass][1]}!"
+              end
+            end
+
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby" style="font-size:0.65em;line-height:1.4em"]
+        |
+          igor = Character.new("Igor", :fighter)
+          puts igor.attack
+
+          merlin = Character.new("Merlin", :wizard)
+          puts merlin.cast_spell
+
+          thomas = Character.new("Thomas", :priest)
+          puts thomas.pray

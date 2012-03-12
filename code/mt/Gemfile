@@ -1,0 +1,4 @@
+source :rubygems
+
+gem 'metaid'
+# , git: "https://github.com/c00lryguy/meta_tools.git"

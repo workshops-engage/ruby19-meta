@@ -1,0 +1,31 @@
+.step.slide#extended[data-x=x_succ data-y=0]
+  q
+    h1
+      span Extended
+      br
+      small  
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby" style="font-size:0.75em;line-height:1.5em"]
+        |
+          module Father
+            def self.extended klass
+              puts "Extended &#35;{klass.inspect}"
+            end
+            def hello
+              puts "Hello!"
+            end
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        |
+          class Son
+            extend Father
+          end
+
+          Son.hello

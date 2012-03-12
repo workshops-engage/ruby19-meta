@@ -1,0 +1,119 @@
+.step.slide#defm[data-x=x_succ data-y=0]
+  q
+    h1
+      span Define method
+      small  
+
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        |
+          class Person
+            define_method(:name) do
+              "Sue"
+            end
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby" style="font-size:0.7em"]
+        |
+          class Dice
+            [2, 4, 6, 8, 10, 12, 20].each do |i|
+              define_method("d&#35;{i}") do
+                1 + rand(i)
+              end
+            end
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        |
+          Dice.new.d2
+          Dice.new.d4
+          # ...
+          Dice.new.d20
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby" style="font-size:0.7em;line-height:1.4em"]
+        |
+          class Dice
+            class << self
+              [2, 4, 6, 8, 10, 12, 20].each do |i|
+                define_method("d&#35;{i}") do
+                  1 + rand(i)
+                end
+              end
+            end
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        |
+          Dice.d2
+          Dice.d4
+          # ...
+          Dice.d20
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby" style="font-size:0.7em;line-height:1.4em"]
+        |
+          class Mult
+            class << self
+              1.upto(100) do |i|
+                define_method("by&#35;{i}") do |x|
+                  i * x
+                end
+              end
+            end
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        |
+          Mult.by100 100
+          # => 10000
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby" style="font-size:0.65em;line-height:1.4em"]
+        |
+          # defines in class
+          class Gen
+            def initialize *methods
+              methods.each do |method|
+                Gen.send(:define_method, method) do
+                  "Defined!"
+                end
+              end
+            end
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        | 
+          gen = Gen.new(:akt)
+          gen.akt
+          new_gen = Gen.new
+          new_gen.akt
+
+.step.slide.exercise[data-x=x_succ data-y=0]
+  = image_tag 'http://cdn1.iconfinder.com/data/icons/oldschool_babasse/Png/Hardware/ordinateur%20off.png'
+  q[style="font-size:1.5em"]
+    | Crie o método add_hello que recebe uma classe e define o método hello nessa.

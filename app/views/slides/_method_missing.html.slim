@@ -1,0 +1,61 @@
+.step.slide#mm[data-x=x_succ data-y=0]
+  q
+    h1
+      span method_missing
+      br
+      small  learning new tricks at runtime
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby" style="font-size:0.65em;"]
+        |
+          class Misser
+            def method_missing m, *ps
+              puts "Called &#35;{m} with &#35;{ps.inspect}"
+            end
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        |
+          Misser.new.yo 1, 2
+          # Called yo with [1, 2]
+
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby" style="font-size:0.7em; line-height:1.5em"]
+        |
+          class AR
+            attr_writer :cols
+
+            def method_missing m, *ps
+              return @cols[m] if @cols.include? m
+              super
+            end
+          end
+
+.step.slide.code[data-x=x_succ data-y=0]
+  q
+    pre
+      code[class="ruby"]
+        |
+          user = AR.new
+          user.cols = {name: "Joe"}
+          user.name # => Joe
+
+.step.slide.exercise[data-x=x_succ data-y=0]
+  = image_tag 'http://cdn1.iconfinder.com/data/icons/oldschool_babasse/Png/Hardware/ordinateur%20off.png'
+  q[style="font-size:1.1em"]
+    | Implementar o WORME (Worst ORM Ever).
+    pre
+      code[class="ruby" style="font-size: 0.85em; line-height: 1.6em"]
+        | DB.db_name.tables
+          DB.db_name.table_name.columns
+          DB.db_name.table_name.all
+          DB.db_name.table_name.all_with_field "value"
+          DB.db_name.table_name.with_field("value").field
