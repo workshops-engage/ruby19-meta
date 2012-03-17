@@ -11,12 +11,12 @@ class DB
 	def tables
 		@tables ||= exec("SELECT tablename FROM pg_tables WHERE schemaname = 'public'").field_values("tablename")
 	end
-  def method_missing meth, *params
-    raise "table #{meth} does not exist" unless tables.include?(meth.to_s)
-    Table.new(meth, self)
-  end
+ 	def method_missing meth, *params
+    	raise "table #{meth} does not exist" unless tables.include?(meth.to_s)
+    	Table.new(meth, self)
+  	end
 	class << self
-		def method_missing meth, *params
+	  def method_missing meth, *params
       new(meth)
 		end
 	end
@@ -29,7 +29,6 @@ class Table
 		@db = db
 	end
 	def column_definitions
-		# raise "!"
 		sql = <<-SQL
        SELECT a.attname, format_type(a.atttypid, a.atttypmod)
         FROM pg_attribute a LEFT JOIN pg_attrdef d

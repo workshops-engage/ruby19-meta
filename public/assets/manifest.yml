@@ -1,7 +1,16 @@
 ---
 arrow.png: arrow-3b993c8cc75db1c9c574887166d63426.png
+blueprint.jpg: blueprint-53864bf5e2885c513372af3645e035c9.jpg
+blueprint_bw.gif: blueprint_bw-d1b314e5f68ddd9fa3fe57f790648ce0.gif
+blueprint_front.jpg: blueprint_front-a27a514cc6a3b8707ee345b54e517f91.jpg
+house-classes.png: house-classes-1dbe2ac3d4b75a26fbf8d5918f309d79.png
+house-diagram.png: house-diagram-62f0eb159131eba11e206d55c2e39d9b.png
+house.jpg: house-db4117f748e4a022326f20642c59b4c2.jpg
+house_inside.jpg: house_inside-8410e0a9d2a1bcecb00ddfd05a5d4979.jpg
+monkeypatch.jpg: monkeypatch-0fc0a42b93e2841ff7c83d95713233f0.jpg
 rails.png: rails-e4b51606cd77fda2615e7439907bfc92.png
 ruby.png: ruby-0032de8cfc6a029f8f4b7e2c0ee525a9.png
+rvm.png: rvm-a4e1d9de40a0efd35fd36bf7196f70e4.png
 highlight.pack.js: highlight.pack-f57a43832846358960769e335c45c113.js
 highlight/brown_papersq.png: highlight/brown_papersq-eff4f22892a2068ef2f844656f775285.png
 highlight/school_book.png: highlight/school_book-0faff5f181da10330ad91046cfe764fd.png
